@@ -1,0 +1,9 @@
+venv
+__pycache__
+.keep
+.vscode
+.idea
+
+*t */*.jpg
+**/*.png
+**/*.npz
