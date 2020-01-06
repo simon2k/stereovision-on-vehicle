@@ -1,0 +1,16 @@
+import cv2
+
+CELL_WIDTH = 23.3
+CELL_HEIGHT = 23.3
+X_CORNERS = 9
+Y_CORNERS = 6
+BOARD_WIDTH = CELL_WIDTH * X_CORNERS
+BOARD_HEIGHT = CELL_HEIGHT * Y_CORNERS
+BOARD_SIZE = (X_CORNERS, Y_CORNERS)
+CORNERS_FINDER_FLAGS = cv2.CALIB_CB_ACCURACY | cv2.CALIB_CB_EXHAUSTIVE | cv2.CALIB_CB_NORMALIZE_IMAGE
+
+
+class CheckerboardPointsFinder:
+    @staticmethod
+    def find_points(image):
+        return cv2.findChessboardCornersSB(image, BOARD_SIZE, flags=CORNERS_FINDER_FLAGS)
