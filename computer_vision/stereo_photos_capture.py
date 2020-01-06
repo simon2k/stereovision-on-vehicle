@@ -1,4 +1,4 @@
-from cv2 import imshow, imwrite, destroyAllWindows, waitKey
+import cv2
 from os import path
 from computer_vision.camera import Camera
 from computer_vision.checkerboard_points_finder import CheckerboardPointsFinder
@@ -26,10 +26,10 @@ class StereoPhotosCapture:
             right_frame = right_camera.read()
             left_frame = left_camera.read()
 
-            imshow('right', right_frame)
-            imshow('left', left_frame)
+            cv2.imshow('right', right_frame)
+            cv2.imshow('left', left_frame)
 
-            key = waitKey(5)
+            key = cv2.waitKey(5)
 
             if key == 27:
                 break
@@ -45,8 +45,8 @@ class StereoPhotosCapture:
                 else:
                     print(f'captured image {images_count}')
 
-                    imwrite(f'{self.photos_folder}/right-{images_count}.jpg', right_frame)
-                    imwrite(f'{self.photos_folder}/left-{images_count}.jpg', left_frame)
+                    cv2.imwrite(f'{self.photos_folder}/right-{images_count}.jpg', right_frame)
+                    cv2.imwrite(f'{self.photos_folder}/left-{images_count}.jpg', left_frame)
                     images_count += 1
 
-        destroyAllWindows()
+        cv2.destroyAllWindows()
