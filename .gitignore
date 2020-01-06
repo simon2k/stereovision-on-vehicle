@@ -4,6 +4,6 @@ __pycache__
 .vscode
 .idea
 
-*t */*.jpg
+**/*.jpg
 **/*.png
 **/*.npz
