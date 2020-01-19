@@ -13,7 +13,7 @@ class StereoPhotosCapture:
         self.height = height
 
         folder = path.dirname(path.realpath(__file__))
-        self.photos_folder = path.join(folder, f'{self.PHOTOS_PATH}/{width}x{height}')
+        self.photos_folder = path.join(folder, self.PHOTOS_PATH)
         verify_folder_existence(self.photos_folder)
 
     def start_capturing(self):

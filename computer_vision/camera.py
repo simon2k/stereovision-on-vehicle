@@ -22,3 +22,13 @@ class Camera:
             raise Exception(f'Camera: {self.side} does not return any image')
 
         return frame
+
+    def grab(self):
+        self.camera.grab()
+
+    def retrieve(self):
+        _, frame = self.camera.retrieve()
+        return frame
+
+    def release(self):
+        self.camera.release()

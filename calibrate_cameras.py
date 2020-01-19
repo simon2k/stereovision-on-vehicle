@@ -5,7 +5,7 @@ from computer_vision.camera_calibrator import CameraCalibrator
 np.set_printoptions(precision=4, suppress=True)
 
 CALIBRATION_STORAGE_PATH = 'data/calibration'
-PHOTOS_FOLDER = 'data/photos/stereo/640x360'
+PHOTOS_FOLDER = 'data/photos/separate'
 
 right_images = glob(f'{PHOTOS_FOLDER}/right-*.jpg')
 
@@ -38,34 +38,28 @@ np.savez_compressed(f'{CALIBRATION_STORAGE_PATH}/left-camera-calibration.npz',
                     dist_coeffs=left_dist_coeffs,
                     reproj_err=left_reproj_err)
 
-# == Results on 06.01.2020 at 12:44:
-#
-# = Right camera
-#
-# Reprojection error:  0.098
-#
+# Right camera
+# Reprojection error:  0.093
 # Camera matrix:
-#  [[479.86   0.   305.22]
-#  [  0.   479.71 173.99]
-#  [  0.     0.     1.  ]]
-#
+#  [[478.0344   0.     311.4095]
+#  [  0.     477.7713 172.3884]
+#  [  0.       0.       1.    ]]
 # Distortion coeff:
-# [[ 0.0415 -0.1536 -0.0052 -0.0051  0.0862  0.      0.      0.      0.002
-#    0.0033  0.0059  0.0014]]
-
-# 0.0415 & -0.1536 & -0.0052 & -0.0051 & 0.002 & 0.0033
-
-# = Left camera
+#  [[ 0.0469 -0.1802 -0.0013  0.0004  0.1359  0.      0.      0.     -0.0024
+#   -0.0014 -0.0037  0.0039]]
 #
-# Reprojection error:  0.1
+# 478.03 & 477.77 & 311.41 & 172.39
+# 0.0469 & -0.1802 & -0.0013 & 0.0004 & -0.0024 & -0.0014
 #
+# Left camera
+# Reprojection error:  0.083
 # Camera matrix:
-#  [[479.95   0.   339.72]
-#  [  0.   479.57 176.  ]
-#  [  0.     0.     1.  ]]
-#
+#  [[477.9134   0.     333.2866]
+#  [  0.     477.4695 177.9162]
+#  [  0.       0.       1.    ]]
 # Distortion coeff:
-# [[ 0.0466 -0.1844 -0.012   0.0089  0.1147  0.      0.      0.     -0.0071
-#    0.0003  0.0189  0.0023]]
+#  [[ 0.0392 -0.1556  0.0006  0.0082  0.1037  0.      0.      0.     -0.0131
+#   -0.001  -0.0043  0.0015]]
 
-# 0.0466 & -0.1844 & -0.012 & 0.0089 & -0.0071 & 0.0003
+# 477.91 & 477.47 & 333.29 & 177.92
+# 0.0392 & -0.1556 & 0.0006 & 0.0082 & -0.0131 & -0.001
