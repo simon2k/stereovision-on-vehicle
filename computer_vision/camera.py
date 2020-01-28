@@ -19,7 +19,7 @@ class Camera:
         has_frame, frame = self.camera.read()
 
         if not has_frame:
-            raise Exception(f'Camera: {self.side} does not return any image')
+            raise Exception('Camera: {side} does not return any image'.format(side=self.side))
 
         return frame
 
