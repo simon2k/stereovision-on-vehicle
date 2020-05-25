@@ -2,6 +2,7 @@ import atexit
 import cv2
 import numpy as np
 import computer_vision
+import collision_avoidance
 
 np.set_printoptions(precision=5, suppress=True)
 
@@ -32,6 +33,10 @@ while True:
     stereo_results_cache['depth_mtx'] = depth_mtx
 
     cv2.imshow('disparity', disparity_img)
+
+    direction = collision_avoidance.calculate_direction(depth_mtx, disparity_img)
+
+    print('Direction: ', direction)
 
     key = cv2.waitKey(5)
 

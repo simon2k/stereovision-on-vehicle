@@ -2,6 +2,8 @@ import atexit
 import cv2
 import numpy as np
 import computer_vision
+import collision_avoidance
+import vehicle
 
 np.set_printoptions(precision=5, suppress=True)
 
@@ -24,7 +26,15 @@ cv2.setMouseCallback('disparity', mouseCallback)
 
 rtDispGen = computer_vision.RealtimeDisparityGenerator()
 
-while True:
+vehicle_serial = vehicle.VehicleSerial()
+vehicle_serial.get_vehicle_serial()
+
+vehicle = vehicle.Vehicle(vehicle_serial)
+
+MAX_STEPS = 4
+steps = 0
+
+while steps < MAX_STEPS:
     disparity_mtx, depth_mtx, disparity_img = rtDispGen.generate_depth_mtxs()
 
     stereo_results_cache['disparity_mtx'] = disparity_mtx
@@ -32,6 +42,13 @@ while True:
     stereo_results_cache['depth_mtx'] = depth_mtx
 
     cv2.imshow('disparity', disparity_img)
+
+    direction = collision_avoidance.calculate_direction(depth_mtx, disparity_img)
+
+    print('Direction: ', direction)
+
+    vehicle.move(direction)
+    steps += 1
 
     key = cv2.waitKey(5)
 
