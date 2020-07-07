@@ -8,9 +8,10 @@ right_camera_matrix = right_calibration['camera_matrix']
 right_dist_coeffs = right_calibration['dist_coeffs']
 
 right_img = cv2.imread(f'{PHOTOS_PATH}/calibration_test.png')
+right_green_img = cv2.imread(f'{PHOTOS_PATH}/green_calibration_test.png')
 
 right_img_corr = cv2.undistort(right_img, cameraMatrix=right_camera_matrix, distCoeffs=right_dist_coeffs)
-blended = cv2.addWeighted(right_img, 0.5, right_img_corr, 0.5, 0.0)
+blended = cv2.addWeighted(right_green_img, 0.5, right_img_corr, 0.5, 0.0)
 
 cv2.imshow('right-original', right_img)
 cv2.imshow('right-corrected', right_img_corr)

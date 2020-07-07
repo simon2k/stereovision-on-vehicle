@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-LINE_COLOR = (0, 0, 0)
+LINE_COLOR = (0, 185, 0)
 LINE_WIDTH = 1
 HEIGHT_STEP = 9
 WIDTH_STEP = 16
@@ -28,4 +28,4 @@ for i in np.arange(start_points.shape[0]):
     draw_line((start_point[0], start_point[1]), (end_point[1], start_point[1]))
     draw_line((start_point[0], end_point[0]), (end_point[1], end_point[0]))
 
-cv2.imwrite('data/photos/calibration_test.png', blank_image)
+cv2.imwrite('data/photos/green_calibration_test.png', blank_image)
