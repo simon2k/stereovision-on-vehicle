@@ -1,10 +1,10 @@
-# Stereo Vision Calibration
+# Stereoscopic machine vision method on a vehicle
 
 ![model](./assets/model.png)
 
 ## Abstract
 
-Stereoscopic machine vision method implementation on the example of a simple robot The goal of the thesis was to examine the implementation of the stereoscopic machine vision in the context of a simple robot. The complete machine vision process was presented starting from the cameras’ calibration, up to generating the depth image, as well as using the generated depth image for collision avoidance in an autonomous vehicle prototype. Appropriate tools were developed to examine the machine vision and collision avoidance processes. The thesis was finalized by implementing the stereo vision and collision avoidance module on a prototype of a vehicle.
+The goal of the thesis was to examine the implementation of the stereoscopic machine vision in the context of a simple robot. The complete machine vision process was presented starting from the cameras’ calibration, up to generating the depth image, as well as using the generated depth image for collision avoidance in an autonomous vehicle prototype. Appropriate tools were developed to examine the machine vision and collision avoidance processes. The thesis was finalized by implementing the stereo vision and collision avoidance module on a prototype of a vehicle.
 
 **Keywords:** machine vision, stereovision, collision avoidance, autonomous vehicles
 
