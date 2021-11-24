@@ -1,11 +1,21 @@
 # Stereo Vision Calibration
 
-This repo contains files that are used for calibrating stereo vision rig.
+![model](./assets/model.png)
 
-## Scripts
+## Abstract
 
-The following scripts are added:
+Stereoscopic machine vision method implementation on the example of a simple robot The goal of the thesis was to examine the implementation of the stereoscopic machine vision in the context of a simple robot. The complete machine vision process was presented starting from the cameras’ calibration, up to generating the depth image, as well as using the generated depth image for collision avoidance in an autonomous vehicle prototype. Appropriate tools were developed to examine the machine vision and collision avoidance processes. The thesis was finalized by implementing the stereo vision and collision avoidance module on a prototype of a vehicle.
 
-- capture_stereo_photos.py - captures photos from both cameras at the same time
-- calibrate_cameras.py - calibrates two cameras
-- sample_image_fix.py - displays a sample right & left images before & after distortion correction
+**Keywords:** machine vision, stereovision, collision avoidance, autonomous vehicles
+
+The [thesis.pdf](./thesis.pdf) file contains the description of the method along with the results.
+
+## Structure
+
+This repo contains files that are related to the thesis about using a stereo vision method to steer a car model. The implementation is divided into four parts:
+
+* [Image processing](./src/computer_vision)
+* [Camera & stereo rig calibration](./src/calibration)
+* [Vehicle control](./src/vehicle)
+* [Collision avoidance](./src/collision_avoidance)
+* [Set of tests for the model](./test)
